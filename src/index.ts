@@ -10,12 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 AppDataSource.initialize().then(() => {
-  console.log("✅Database connected");
 
   app.use("/requests", requestRoutes);
   app.use("/users", userRoutes);
 
   app.listen(3000, () => {
-    console.log("🚀 Server running at http://localhost:3000");
+    console.log("Server running at http://localhost:3000");
   });
-}).catch(err => console.error("❌ DB error:", err));
+}).catch(err => console.error("DB error:", err));

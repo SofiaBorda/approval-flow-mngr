@@ -10,7 +10,7 @@ export class History {
   @CreateDateColumn()
   updateAt: Date;
 
-  @Column()
+  @Column({ type: "varchar", default: "" })
   action: string;
 
   @ManyToOne(() => User, { eager: true })
